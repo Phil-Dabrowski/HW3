@@ -1,6 +1,6 @@
-<h1>Place:<%= @place["name"]%></h1>
+<h1><%= @place["name"]%></h1>
 
-<%@posts = Post.where({"place_id" => @place["id"]})%>
+
 
 <ul>
     <% for post in @posts%>
