@@ -1,4 +1,20 @@
-<h1><%= @place["name"]%></h1>
+<h1>Place:<%= @place["name"]%></h1>
+
+<%@posts = Post.where({"place_id" => @place["id"]})%>
+
+<ul>
+    <% for post in @posts%>
+
+        <h2> <%= post["title"] %> </h2>
+        <h5> <%= post["posted_on"] %> </h5>
+        <h4> <%= post["description"] %> </h4>
+
+    <% end %>
+
+</ul>
 
 
+
+<a href="/posts/new?place_id=<%=@place["id"]%>">New Post </a>
+<p></p>
 <a href="/places">All The Places I Have Visited </a>
